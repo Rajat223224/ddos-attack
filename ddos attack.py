@@ -21,7 +21,7 @@ os.system("clear")
 os.system("figlet DDos Attack")
 print
 print ("Author   : RatDenial")
-ip = raw_input("IP Target : ")
+ip = input("IP Target : ")
 port = input("Port       : ")
 
 os.system("clear")
